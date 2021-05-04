@@ -4,7 +4,7 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_inicio"
-        android:title="Perfil" />
+        android:title="Inicio" />
     <item android:id="@+id/favorito_Fragment"
         android:icon="@drawable/ic_favorito"
         android:title="Favorito" />
