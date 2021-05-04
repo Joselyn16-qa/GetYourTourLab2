@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/favorito_Fragment"
+        android:name="com.example.gyt.favorito_Fragment"
+        android:label="fragment_favorito_"
+        tools:layout="@layout/fragment_favorito_" />
+    <fragment
+        android:id="@+id/perfil_Fragment"
+        android:name="com.example.gyt.perfil_Fragment"
+        android:label="fragment_perfil_"
+        tools:layout="@layout/fragment_perfil_" />
+    <fragment
+        android:id="@+id/reservar_Fragment"
+        android:name="com.example.gyt.reservar_Fragment"
+        android:label="fragment_reservar_"
+        tools:layout="@layout/fragment_reservar_" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.gyt.homeFragment"
+        android:label="homeFragment" />
+    <fragment
+        android:id="@+id/notificacion_Fragment"
+        android:name="com.example.gyt.notificacion_Fragment"
+        android:label="fragment_notificacion_"
+        tools:layout="@layout/fragment_notificacion_" />
+</navigation>
