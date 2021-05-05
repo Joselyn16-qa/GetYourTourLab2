@@ -14,7 +14,11 @@
         android:id="@+id/perfil_Fragment"
         android:name="com.example.gyt.perfil_Fragment"
         android:label="fragment_perfil_"
-        tools:layout="@layout/fragment_perfil_" />
+        tools:layout="@layout/fragment_perfil_">
+        <action
+            android:id="@+id/action_perfil_Fragment_to_registrarFragment"
+            app:destination="@id/registrarFragment" />
+    </fragment>
     <fragment
         android:id="@+id/reservar_Fragment"
         android:name="com.example.gyt.reservar_Fragment"
@@ -29,4 +33,9 @@
         android:name="com.example.gyt.notificacion_Fragment"
         android:label="fragment_notificacion_"
         tools:layout="@layout/fragment_notificacion_" />
+    <fragment
+        android:id="@+id/registrarFragment"
+        android:name="com.example.gyt.RegistrarFragment"
+        android:label="fragment_registrar"
+        tools:layout="@layout/fragment_registrar" />
 </navigation>
