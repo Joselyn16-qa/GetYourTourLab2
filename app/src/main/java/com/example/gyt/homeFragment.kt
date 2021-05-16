@@ -31,10 +31,16 @@ class homeFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     var savedDay=0
     var savedMonth=0
     var savedYear= 0
+
+    var year2=0
+    var month2=0
+    var day2=0
+    var savedDay2=0
+    var savedMonth2=0
+    var savedYear2= 0
     private var param1: String? = null
     private var param2: String? = null
-    private var layoutManager : RecyclerView.LayoutManager? =null
-    private var adapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -48,7 +54,7 @@ class homeFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_home, container, false)
 
     }
@@ -57,10 +63,19 @@ class homeFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         super.onViewCreated(itemView, savedInstanceState)
         recyclerViewTours.apply {
             layoutManager = LinearLayoutManager(activity)
-
             adapter = RecyclerViewAdapter()
         }
-        pickDate()
+       pickDate()
+
+        pickDate2()
+
+
+
+        val startDate = Calendar.getInstance(TimeZone.getDefault(), Locale.getDefault())
+        val endDate = Calendar.getInstance(TimeZone.getDefault(), Locale.getDefault())
+        endDate.add(Calendar.MONTH, 6)
+
+
     }
 
     private fun getDateCalendar(){
@@ -68,14 +83,30 @@ class homeFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         year = cal.get(Calendar.YEAR)
         month=cal.get(Calendar.MONTH)
         day = cal.get(Calendar.DAY_OF_MONTH)
+
+    }
+    private fun getDateCalendar2(){
+        val cal : Calendar = Calendar.getInstance()
+
+        year2 = cal.get(Calendar.YEAR)
+        month2=cal.get(Calendar.MONTH)
+        day2= cal.get(Calendar.DAY_OF_MONTH)
     }
     private fun pickDate(){
-
 
         button.setOnClickListener{
             getDateCalendar()
             DatePickerDialog(requireContext(), this, year, month, day).show()
-          //   DatePickerDialog(this, this, year, month, day).show()
+
+        }
+
+    }
+    private fun pickDate2(){
+
+
+        button2.setOnClickListener {
+            getDateCalendar2()
+            DatePickerDialog(requireContext(), this, year2, month2, day2).show()
         }
     }
 
@@ -86,7 +117,23 @@ class homeFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
         textDate.text="$savedDay-$savedMonth-$savedYear"
 
+         fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+            savedDay2 = dayOfMonth
+            savedMonth2 = month
+            savedYear2 = year
+
+            textDate.text="$savedDay2-$savedMonth2-$savedYear2"
+         }
     }
+/*
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        savedDay2 = dayOfMonth
+        savedMonth2 = month
+        savedYear2 = year
 
 
+
+        textDate2.text="$savedDay2-$savedMonth2-$savedYear2"
+    }
+*/
 }

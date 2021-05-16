@@ -3,17 +3,17 @@
 
 
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <SearchView
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <SearchView
         android:id="@+id/searchView"
         android:layout_width="324dp"
         android:layout_height="wrap_content"
@@ -21,55 +21,81 @@
         android:layout_margin="16dp"
         android:layout_marginTop="0dp"
         android:background="#DAE9EC"
-       />
+        />
+    </LinearLayout>
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="0dp"
-        android:text="Fecha"
+        android:text="Ida"
         android:textColor="#FFFFFF"
         android:typeface="serif"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+
         />
 
-    <!-- <Button
-         android:id="@+id/button2"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:text="Vuelta"
-         android:textColor="#FFFFFF"
-         android:layout_toRightOf="@+id/button"
-         android:layout_alignParentBottom="true" />
- -->
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+
+        android:layout_marginStart="100dp"
+
+        android:text="Vuelta"
+        android:textColor="#FFFFFF"
+        android:typeface="serif" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button"
         android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
+        android:layout_marginStart="45dp"
         android:textColor="#000000"
         android:textSize="22sp"
-
         android:typeface="serif"
         tools:text="@tools:sample/date/mmddyy" />
 
+    <TextView
+        android:id="@+id/textDate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button2"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="100dp"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:typeface="serif"
+        tools:text="@tools:sample/date/mmddyy" />
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewTours"
         android:layout_width="match_parent"
-        android:layout_height="432dp">
+        android:layout_height="435dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="123dp" />
 
 
 </LinearLayout>
