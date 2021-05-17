@@ -8,10 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.button
+import kotlinx.android.synthetic.main.fragment_home.button2
+import kotlinx.android.synthetic.main.fragment_perfil_.*
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -65,6 +69,7 @@ class homeFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             layoutManager = LinearLayoutManager(activity)
             adapter = RecyclerViewAdapter()
         }
+
        pickDate()
 
         pickDate2()

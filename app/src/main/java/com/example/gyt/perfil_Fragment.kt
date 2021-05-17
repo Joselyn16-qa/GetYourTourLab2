@@ -103,13 +103,16 @@ class perfil_Fragment : Fragment() {
     @SuppressLint("FragmentLiveDataObserve")
     override fun onViewCreated(view: View, savedInstanceState: Bundle1?) {
         super.onViewCreated(view, savedInstanceState)
+        buttonR.setOnClickListener{
+            it.findNavController().navigate(R.id.action_perfil_Fragment_to_homeFragment2)
+        }
         button.setOnClickListener{
             it.findNavController().navigate(R.id.action_perfil_Fragment_to_registrarFragment)
             }
 
         val emailLayout = view.findViewById<TextView>(R.id.email)
         val passwordLayout = view.findViewById<TextView>(R.id.password)
-        val button2 = view.findViewById<MaterialButton>(R.id.button2)
+        val buttonR = view.findViewById<MaterialButton>(R.id.buttonR)
 
       emailLayout.doOnTextChanged{ text, _, _, _->
           emailLiveData.value= text.toString()
@@ -119,7 +122,7 @@ class perfil_Fragment : Fragment() {
         }
 
         isValidLiveData.observe(this){ isValid ->
-            button2.isEnabled= isValid
+            buttonR.isEnabled= isValid
 
         }
         emailLayout.addTextChangedListener(object: TextWatcher{

@@ -90,7 +90,9 @@ class RegistrarFragment : Fragment() {
     @SuppressLint("FragmentLiveDataObserve")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        button3.setOnClickListener{
+            it.findNavController().navigate(R.id.action_registrarFragment_to_homeFragment)
+        }
         val emailLayout = view.findViewById<TextView>(R.id.email)
         val passwordLayout = view.findViewById<TextView>(R.id.password)
         val nombreLayout = view.findViewById<TextView>(R.id.nombre)
