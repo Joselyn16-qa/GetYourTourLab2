@@ -22,9 +22,6 @@ class perfil_Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var emailEditText: EditText
-    private lateinit var passwordEditText: EditText
-    private lateinit var loginButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,48 +60,10 @@ class perfil_Fragment : Fragment() {
             }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-         button.setOnClickListener{
-             it.findNavController().navigate(R.id.action_perfil_Fragment_to_registrarFragment)
-         }
-
-        emailEditText = view.findViewById(R.id.et1)
-        passwordEditText = view.findViewById(R.id.et2)
-        loginButton = view.findViewById(R.id.btnIni)
-
-        emailEditText.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val emailInput: String = emailEditText.text.toString().trim()
-                val passwordInput: String = passwordEditText.text.toString().trim()
-
-                loginButton.isEnabled = !emailInput.isEmpty() && !passwordInput.isEmpty()
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-        })
-
-        passwordEditText.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val emailInput: String = emailEditText.text.toString().trim()
-                val passwordInput: String = passwordEditText.text.toString().trim()
-
-                loginButton.isEnabled = !emailInput.isEmpty() && !passwordInput.isEmpty()
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-            }
-        })
+     button.setOnClickListener{
+         it.findNavController().navigate(R.id.action_perfil_Fragment_to_registrarFragment)
+     }
     }
-
-
 }

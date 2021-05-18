@@ -56,40 +56,4 @@ class RegistrarFragment : Fragment() {
                 }
             }
     }
-
-    fun register(view: View)
-    {
-        var name:EditText = view.findViewById(R.id.name)
-        var email:EditText = view.findViewById(R.id.email)
-        var dni:EditText = view.findViewById(R.id.dni)
-        var country:EditText = view.findViewById(R.id.country)
-        var birth_day:EditText = view.findViewById(R.id.birth_day)
-        var password:EditText = view.findViewById(R.id.password)
-        var c_password:EditText = view.findViewById(R.id.c_password)
-
-        val user = User(
-            name.text.toString(),
-            email.text.toString(),
-            dni.text.toString(),
-            country.text.toString(),
-            birth_day.text.toString(),
-            password.text.toString(),
-            c_password.text.toString()
-        )
-        doAsync {
-            val call = getRetrofit().create(APIService::class.java).register("register",user).execute()
-            val response = call.body() as Response
-            uiThread {
-                Log.i("hj",response.toString())
-            }
-        }
-    }
-
-    private fun getRetrofit(): Retrofit
-    {
-        return Retrofit.Builder()
-            .baseUrl("http://127.0.0.1:8000/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
 }
