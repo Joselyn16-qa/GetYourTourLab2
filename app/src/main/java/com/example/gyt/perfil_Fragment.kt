@@ -1,14 +1,10 @@
 package com.example.gyt
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_perfil_.*
 
@@ -22,8 +18,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [perfil_Fragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-public class perfil_Fragment : Fragment()
-{
+class perfil_Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null

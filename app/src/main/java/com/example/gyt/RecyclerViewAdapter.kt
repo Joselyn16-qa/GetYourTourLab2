@@ -19,9 +19,8 @@ class RecyclerViewAdapter:RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> (
         R.drawable.image_1,
         R.drawable.image_2,
         R.drawable.image_3,
-        R.drawable.image_4
+        R.drawable.image_5
     )
-
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 

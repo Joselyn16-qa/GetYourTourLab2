@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_perfil_Fragment_to_registrarFragment"
             app:destination="@id/registrarFragment" />
+        <action
+            android:id="@+id/action_perfil_Fragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/reservar_Fragment"
@@ -37,5 +40,9 @@
         android:id="@+id/registrarFragment"
         android:name="com.example.gyt.RegistrarFragment"
         android:label="fragment_registrar"
-        tools:layout="@layout/fragment_registrar" />
+        tools:layout="@layout/fragment_registrar" >
+        <action
+            android:id="@+id/action_registrarFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

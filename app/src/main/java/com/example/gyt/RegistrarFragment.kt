@@ -1,16 +1,10 @@
 package com.example.gyt
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
