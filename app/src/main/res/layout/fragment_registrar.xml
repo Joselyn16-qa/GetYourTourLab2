@@ -21,7 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
@@ -29,78 +31,121 @@
                 android:text="Regístrate"
                 android:textColor="#2196F3"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="130dp"
+                />
+</LinearLayout>
 
-            <EditText
+           <EditText
                 android:id="@+id/name"
-                android:layout_width="match_parent"
+                android:layout_width="317dp"
                 android:layout_height="match_parent"
                 android:width="50dp"
                 android:ems="10"
                 android:hint="Nombre"
-                android:inputType="text" />
+                android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/parent"
+            app:layout_constraintEnd_toEndOf="@+id/parent"
+            app:layout_constraintStart_toStartOf="@+id/text2"
+                android:layout_marginStart="20dp"
+                />
 
             <EditText
                 android:id="@+id/email"
-                android:layout_width="match_parent"
+                android:layout_width="315dp"
                 android:layout_height="match_parent"
                 android:width="50dp"
                 android:ems="10"
                 android:hint="Email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/parent"
+                app:layout_constraintEnd_toEndOf="@+id/parent"
+                app:layout_constraintStart_toStartOf="@+id/name"/>
 
             <EditText
                 android:id="@+id/dni"
-                android:layout_width="match_parent"
+                android:layout_width="315dp"
                 android:layout_height="match_parent"
                 android:width="50dp"
                 android:ems="10"
                 android:hint="Cédula"
-                android:inputType="text" />
+                android:inputType="text"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/parent"
+                app:layout_constraintEnd_toEndOf="@+id/parent"
+                app:layout_constraintStart_toStartOf="@+id/email" />
 
             <EditText
                 android:id="@+id/country"
-                android:layout_width="match_parent"
+                android:layout_width="316dp"
                 android:layout_height="match_parent"
                 android:width="50dp"
                 android:ems="10"
                 android:hint="Pais"
-                android:inputType="text" />
+                android:inputType="text"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/parent"
+                app:layout_constraintEnd_toEndOf="@+id/parent"
+                app:layout_constraintStart_toStartOf="@+id/dni"/>
 
             <EditText
                 android:id="@+id/birth_day"
-                android:layout_width="match_parent"
+                android:layout_width="316dp"
                 android:layout_height="match_parent"
                 android:ems="10"
+
                 android:hint="Fecha de nacimiento"
-                android:inputType="text" />
+                android:layout_marginStart="20dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/parent"
+                app:layout_constraintEnd_toEndOf="@+id/parent"
+                app:layout_constraintStart_toStartOf="@+id/birth_day" />
 
             <EditText
                 android:id="@+id/password"
-                android:layout_width="match_parent"
+                android:layout_width="316dp"
                 android:layout_height="match_parent"
                 android:width="50dp"
                 android:ems="10"
+                android:layout_marginStart="20dp"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email"
+
+                />
 
             <EditText
                 android:id="@+id/c_password"
-                android:layout_width="match_parent"
+                android:layout_width="316dp"
                 android:layout_height="match_parent"
                 android:width="50dp"
                 android:ems="10"
+                android:layout_marginStart="20dp"
                 android:hint="Confirmación contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:layout_marginTop="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
 
+                app:layout_constraintTop_toBottomOf="@+id/password"
+                app:layout_constraintStart_toStartOf="@+id/button3" />
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
             <Button
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="register"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="30dp"
                 android:text="Regístrate"
                 android:textColor="#FFFFFF" />
-
+</LinearLayout>
         </LinearLayout>
     </ScrollView>
 

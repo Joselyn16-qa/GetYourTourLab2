@@ -122,23 +122,12 @@ class homeFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
         textDate.text="$savedDay-$savedMonth-$savedYear"
 
-         fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
             savedDay2 = dayOfMonth
             savedMonth2 = month
             savedYear2 = year
 
-            textDate.text="$savedDay2-$savedMonth2-$savedYear2"
-         }
+            textDate2.text="$savedDay2-$savedMonth2-$savedYear2"
+
     }
-/*
-    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        savedDay2 = dayOfMonth
-        savedMonth2 = month
-        savedYear2 = year
 
-
-
-        textDate2.text="$savedDay2-$savedMonth2-$savedYear2"
-    }
-*/
 }

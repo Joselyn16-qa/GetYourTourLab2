@@ -1,11 +1,20 @@
 package com.example.gyt
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
+import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.fragment_perfil_.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,7 +31,24 @@ class perfil_Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private  val emailLiveData = MutableLiveData<String>()
+    private  val passwordLiveData = MutableLiveData<String>()
+    lateinit var editTextTextPassword : EditText
+    lateinit var editTextTextEmailAddress : EditText
+    private val isValidLiveData  = MediatorLiveData<Boolean>().apply {
+        this.value=false
 
+        addSource(emailLiveData){ email->
+            val password = passwordLiveData.value
+            this.value=validateForm(email, password)
+
+        }
+        addSource(passwordLiveData){ password->
+            val email = emailLiveData.value
+            this.value=validateForm(email, password)
+
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -62,8 +88,59 @@ class perfil_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-     button.setOnClickListener{
-         it.findNavController().navigate(R.id.action_perfil_Fragment_to_registrarFragment)
+     buttonR.setOnClickListener{
+         it.findNavController().navigate(R.id.action_perfil_Fragment_to_homeFragment2)
      }
+        button.setOnClickListener{
+            it.findNavController().navigate(R.id.action_perfil_Fragment_to_registrarFragment)
+        }
+
+        val emailLayout = view.findViewById<TextView>(R.id.email)
+        val passwordLayout = view.findViewById<TextView>(R.id.password)
+        val buttonR = view.findViewById<MaterialButton>(R.id.buttonR)
+
+        emailLayout.doOnTextChanged{ text, _, _, _->
+            emailLiveData.value= text.toString()
+        }
+        passwordLayout.doOnTextChanged{ text, _, _, _->
+            passwordLiveData.value= text.toString()
+        }
+
+        isValidLiveData.observe(viewLifecycleOwner){ isValid ->
+            buttonR.isEnabled= isValid
+
+        }
+        emailLayout.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(android.util.Patterns.EMAIL_ADDRESS.matcher(emailLayout.text.toString()).matches())
+                else{
+                    emailLayout.setError("Correo Invalido")
+                }
+            }
+
+
+        }
+
+        )
+        editTextTextEmailAddress= view.findViewById(R.id.email)
+        editTextTextPassword= view.findViewById(R.id.password)
+
+
+
+    }
+    private fun validateForm(email: String?, password: String?): Boolean{
+        val isValidEmail = email!= null && email.isNotBlank() && email.contains("@")
+        val isValidPassword=password!= null && password.isNotBlank() && password.length >= 8
+        if(editTextTextEmailAddress.text.toString().length==0) {
+            Toast.makeText(getActivity(), "valores insuficientes", Toast.LENGTH_SHORT).show()
+        }
+        return isValidEmail && isValidPassword
     }
 }

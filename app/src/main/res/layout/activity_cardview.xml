@@ -55,7 +55,9 @@
         app:anim_scale_factor="3"
         app:icon_size="8dp"
 
-        app:icon_type="heart" />
+        app:icon_type="heart"
+        tools:ignore="MissingClass" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
