@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.fragment_perfil_.*
@@ -88,7 +89,7 @@ class perfil_Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-     buttonR.setOnClickListener{
+        button.setOnClickListener{
          it.findNavController().navigate(R.id.action_perfil_Fragment_to_homeFragment2)
      }
         button.setOnClickListener{
@@ -97,7 +98,7 @@ class perfil_Fragment : Fragment() {
 
         val emailLayout = view.findViewById<TextView>(R.id.email)
         val passwordLayout = view.findViewById<TextView>(R.id.password)
-        val buttonR = view.findViewById<MaterialButton>(R.id.buttonR)
+        val buttonR = view.findViewById<MaterialButton>(R.id.btnIni)
 
         emailLayout.doOnTextChanged{ text, _, _, _->
             emailLiveData.value= text.toString()
