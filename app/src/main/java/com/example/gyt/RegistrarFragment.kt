@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.fragment_perfil_.*
