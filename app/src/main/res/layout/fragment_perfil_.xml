@@ -12,7 +12,7 @@
     tools:context=".perfil_Fragment">
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/et1"
         android:layout_width="312dp"
         android:layout_height="46dp"
         android:layout_marginStart="32dp"
@@ -21,14 +21,13 @@
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintBottom_toTopOf="@+id/et2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/et2"
         android:layout_width="313dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
@@ -37,10 +36,10 @@
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/buttonR"
+        app:layout_constraintBottom_toTopOf="@+id/btnIni"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/et1" />
 
     <TextView
         android:id="@+id/textView"
@@ -52,23 +51,25 @@
         android:textColor="#2196F3"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintBottom_toTopOf="@+id/et1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonR"
+        android:id="@+id/btnIni"
         android:layout_width="150dp"
         android:layout_height="43dp"
         android:layout_marginBottom="58dp"
+        android:background="@drawable/btn_enable"
+        android:enabled="false"
         android:text="Inicia Sesión"
         android:textColor="#FFFFFF"
         android:textIsSelectable="false"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/et2" />
 
     <TextView
         android:id="@+id/textView3"
@@ -82,7 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonR" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIni" />
 
     <Button
         android:id="@+id/button"
@@ -99,6 +100,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.253" />
